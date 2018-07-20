@@ -1,21 +1,39 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
-import About from './views/About.vue';
+import LandingPage from './views/LandingPage.vue';
+import LogIn from './views/LogIn.vue';
+import SignUp from './views/SignUp.vue';
+import SearchResult from './views/SearchResult.vue';
 
 Vue.use(Router);
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home,
+      name: 'landingpage',
+      component: LandingPage,
     },
     {
-      path: '/about',
-      name: 'about',
-      component: About,
+      path: '/login',
+      name: 'login',
+      component: LogIn,
+    },
+    {
+      path: '/signup',
+      name: 'singup',
+      component: SignUp,
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: LogIn,
+    },
+    {
+      path: '/search',
+      name: 'searchresult',
+      component: SearchResult,
     },
   ],
 });

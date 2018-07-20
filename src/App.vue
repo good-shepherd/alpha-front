@@ -1,31 +1,84 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <header>
+      <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
+        <div class="container">
+          <router-link to="/" class="navbar-brand">
+            <img src="./assets/beer.png" width="30" height="30"
+                 class="d-inline-block align-top" alt="logo">
+            마쎠라 마쎠라
+          </router-link>
+          <form class="form-inline my-2 my-lg-0 mr-auto">
+            <input class="form-control mr-sm-2"
+                   type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-warning my-2 my-sm-0"
+                    type="submit">Search
+            </button>
+          </form>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <router-link to="/login" class="nav-link">Log In</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/signup" class="nav-link">Sign Up</router-link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <router-view/>
     </div>
-    <router-view/>
+    <footer>
+      <p class="container">@ 2018 Copyright: Augustine</p>
+    </footer>
   </div>
 </template>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
+  body {
+    padding-top: 70px;
+  }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  .navbar {
+    background: #222222;
+  }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  .nav-item::after {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 2px;
+    background: #fec400;
+    transition: 0.2s;
+  }
+
+  .nav-item:hover::after {
+    width: 100%;
+  }
+
+  .navbar-dark .navbar-nav .active > .nav-link,
+  .navbar-dark .navbar-nav .nav-link.active,
+  .navbar-dark .navbar-nav .nav-link.show,
+  .navbar-dark .navbar-nav .show > .nav-link,
+  .navbar-dark .navbar-nav .nav-link:focus,
+  .navbar-dark .navbar-nav .nav-link:hover {
+    color: #fec400;
+  }
+
+  .nav-link {
+    padding: 15px 5px;
+    transition: 0.2s;
+  }
+
+  footer {
+    background-color: #222222;
+    height: 60px;
+  }
+
+  footer p {
+    color: #fec400;
+    text-align: center;
+    padding-top: 17px;
+  }
 </style>
