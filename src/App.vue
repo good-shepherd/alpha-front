@@ -6,15 +6,14 @@
           <router-link to="/" class="navbar-brand">
             <img src="./assets/beer.png" width="30" height="30"
                  class="d-inline-block align-top" alt="logo">
-            마쎠라 마쎠라
+            적셔!
           </router-link>
-          <form class="form-inline my-2 my-lg-0 mr-auto">
+          <div class="form-inline my-2 my-lg-0 mr-auto">
             <input class="form-control mr-sm-2"
                    type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-warning my-2 my-sm-0"
-                    type="submit">Search
-            </button>
-          </form>
+            <input class="btn btn-outline-warning my-2 my-sm-0"
+                    type="button" value="Search">
+          </div>
           <ul class="navbar-nav">
             <li class="nav-item">
               <router-link to="/login" class="nav-link">Log In</router-link>
@@ -26,16 +25,29 @@
         </div>
       </nav>
     </header>
-    <div class="container">
-      <router-view/>
-    </div>
+    <router-view/>
     <footer>
       <p class="container">@ 2018 Copyright: Augustine</p>
     </footer>
   </div>
 </template>
 
+<script>
+export default {
+  name: 'App',
+  data: () => ({
+    searchKeyword: '',
+  }),
+};
+</script>
+
 <style>
+  @import url('https://fonts.googleapis.com/css?family=Jua');
+
+  .navbar-brand {
+    font-family: 'Jua', sans-serif;
+  }
+
   body {
     padding-top: 70px;
   }

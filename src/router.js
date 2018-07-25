@@ -12,7 +12,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'landingpage',
+      name: 'home',
       component: LandingPage,
     },
     {
@@ -26,13 +26,8 @@ export default new Router({
       component: SignUp,
     },
     {
-      path: '/login',
-      name: 'login',
-      component: LogIn,
-    },
-    {
       path: '/search',
-      name: 'searchresult',
+      name: 'search',
       component: SearchResult,
     },
   ],
